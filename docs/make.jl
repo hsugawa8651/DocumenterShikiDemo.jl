@@ -16,6 +16,8 @@ makedocs(;
     sitename="DocumenterShikiDemo",
     pages=[
         "Home" => "index.md",
+        "Syntax Highlighting" => "syntax.md",
+        "Gallery" => "gallery.md",
     ],
 
 )
