@@ -26,7 +26,7 @@ end
 
 **Working Example**:
 
-```julia
+```nohighlight
 # @highlight: 2,4-5
 function example()
     x = 1  # This line will be highlighted
@@ -74,7 +74,7 @@ In this pattern:
 
 **Working Example**:
 
-```julia
+```nohighlight
 function example()
     println("Normal line")
     # @highlight-start
@@ -119,7 +119,7 @@ In this pattern:
 
 **Working Example**:
 
-```julia
+```nohighlight
 function example()
     println("Normal line")
     # @highlight-start
@@ -158,8 +158,7 @@ function demo()
         # @highlight-start[3]
         if i % 2 == 0
             # @highlight-start[4]
-            println(i)
-            # @highlight-end
+            println(i) # @highlight-end
         end # @highlight-end
     end # @highlight-end
 end # @highlight-end
@@ -180,7 +179,7 @@ end # @highlight-end
 
 **Working Example**:
 
-```julia
+```nohighlight
 # @highlight-start[1]
 function demo()
     # @highlight-start[2]
@@ -188,8 +187,7 @@ function demo()
         # @highlight-start[3]
         if i % 2 == 0
             # @highlight-start[4]
-            println("Even: $i")
-            # @highlight-end
+            println("Even: $i") # @highlight-end
         end # @highlight-end
     end # @highlight-end
 end # @highlight-end
@@ -205,8 +203,7 @@ function demo()
         # @highlight-start[3]
         if i % 2 == 0
             # @highlight-start[4]
-            println("Even: $i")
-            # @highlight-end
+            println("Even: $i") # @highlight-end
         end # @highlight-end
     end # @highlight-end
 end # @highlight-end
@@ -251,7 +248,7 @@ end
 
 **Working Example**:
 
-```julia
+```nohighlight
 # @highlight-auto-start
 function demo()
     # @highlight-auto-start
@@ -287,7 +284,7 @@ demo()
 
 **Deep Nesting Example** (5 levels - demonstrating color cycling):
 
-```julia
+```nohighlight
 # @highlight-auto-start
 function process_data(data)
     # @highlight-auto-start
@@ -352,7 +349,7 @@ calculate(5, 3)
 
 **Working Example**:
 
-```julia
+```nohighlight
 # @highlight-auto-start,bgcolor=lightpink
 function calculate(x, y)
     # @highlight-auto-start,bgcolor=#ffeecc
@@ -414,7 +411,7 @@ end
 
 **Working Example**:
 
-```julia
+```nohighlight
 function example()
     x = 1
     y = 2  # [!code highlight]
@@ -447,7 +444,7 @@ julia> mean(x)
 
 **Working Example**:
 
-```julia
+```nohighlight
 # @highlight: 2-3
 x = [1, 2, 3, 4, 5]
 sum(x)
