@@ -24,7 +24,17 @@ end
 - `@highlight: 2-5` - Highlight lines 2 through 5
 - `@highlight: 1,3-4,7` - Combine multiple ranges
 
-**Example**:
+**Working Example**:
+
+```julia
+# @highlight: 2,4-5
+function example()
+    x = 1  # This line will be highlighted
+    y = 2
+    z = x + y  # These lines will be highlighted
+    return z   # These lines will be highlighted
+end
+```
 
 ```@example
 # @highlight: 2,4-5
@@ -62,7 +72,19 @@ In this pattern:
 - Highlighting ends before `# @highlight-end` (the `y = ...` line is the last highlighted line)
 - The `# @highlight-end` line itself is removed from the output
 
-**Example**:
+**Working Example**:
+
+```julia
+function example()
+    println("Normal line")
+    # @highlight-start
+    x = 10 * 2
+    y = x + 5
+    # @highlight-end
+    println("Normal line")
+    return y
+end
+```
 
 ```@example
 function example()
@@ -95,7 +117,18 @@ In this pattern:
 - Highlighting includes the line with `# @highlight-end` (the `y = ...` line is highlighted)
 - Only the `# @highlight-end` marker is removed, the code on that line remains
 
-**Example**:
+**Working Example**:
+
+```julia
+function example()
+    println("Normal line")
+    # @highlight-start
+    x = 10 * 2
+    y = x + 5  # @highlight-end
+    println("Normal line")
+    return y
+end
+```
 
 ```@example
 function example()
@@ -119,12 +152,14 @@ Use different highlight levels (1-4) to visualize nested code structures with di
 
 ```nohighlight
 # @highlight-start[1]
-function outer()
+function demo()
     # @highlight-start[2]
     for i in 1:10
         # @highlight-start[3]
         if i % 2 == 0
+            # @highlight-start[4]
             println(i)
+            # @highlight-end
         end # @highlight-end
     end # @highlight-end
 end # @highlight-end
@@ -143,21 +178,40 @@ end # @highlight-end
 - Nest multiple levels to show code hierarchy
 - Useful for complex algorithms with multiple nesting levels
 
-**Example**:
+**Working Example**:
 
-```@example
+```julia
 # @highlight-start[1]
-function outer()
+function demo()
     # @highlight-start[2]
     for i in 1:3
         # @highlight-start[3]
         if i % 2 == 0
+            # @highlight-start[4]
             println("Even: $i")
+            # @highlight-end
         end # @highlight-end
     end # @highlight-end
 end # @highlight-end
 
-outer()
+demo()
+```
+
+```@example
+# @highlight-start[1]
+function demo()
+    # @highlight-start[2]
+    for i in 1:3
+        # @highlight-start[3]
+        if i % 2 == 0
+            # @highlight-start[4]
+            println("Even: $i")
+            # @highlight-end
+        end # @highlight-end
+    end # @highlight-end
+end # @highlight-end
+
+demo()
 ```
 
 ## 4. Auto-Leveled Highlights
@@ -166,12 +220,14 @@ Use `@highlight-auto-start` and `@highlight-auto-end` to automatically determine
 
 ```nohighlight
 # @highlight-auto-start
-function outer()
+function demo()
     # @highlight-auto-start
     for i in 1:10
         # @highlight-auto-start
         if i % 2 == 0
+            # @highlight-auto-start
             println(i)
+            # @highlight-auto-end
         # @highlight-auto-end
     # @highlight-auto-end
 # @highlight-auto-end
@@ -193,24 +249,65 @@ end
 - No need to manually specify level numbers
 - Useful when you want automatic color coding based on nesting structure
 
-**Example**:
+**Working Example**:
 
-```@example
+```julia
 # @highlight-auto-start
-function outer()
+function demo()
     # @highlight-auto-start
     for i in 1:3
         # @highlight-auto-start
         if i % 2 == 0
+            # @highlight-auto-start
             println("Even: $i")
+            # @highlight-auto-end
         end # @highlight-auto-end
     end # @highlight-auto-end
 end # @highlight-auto-end
 
-outer()
+demo()
+```
+
+```@example
+# @highlight-auto-start
+function demo()
+    # @highlight-auto-start
+    for i in 1:3
+        # @highlight-auto-start
+        if i % 2 == 0
+            # @highlight-auto-start
+            println("Even: $i")
+            # @highlight-auto-end
+        end # @highlight-auto-end
+    end # @highlight-auto-end
+end # @highlight-auto-end
+
+demo()
 ```
 
 **Deep Nesting Example** (5 levels - demonstrating color cycling):
+
+```julia
+# @highlight-auto-start
+function process_data(data)
+    # @highlight-auto-start
+    for item in data
+        # @highlight-auto-start
+        if item > 0
+            # @highlight-auto-start
+            while item > 10
+                # @highlight-auto-start
+                item = item - 5
+                println("Reduced: $item")
+                # @highlight-auto-end
+            end # @highlight-auto-end
+            println("Final: $item")
+        end # @highlight-auto-end
+    end # @highlight-auto-end
+end # @highlight-auto-end
+
+process_data([15, 8, 22])
+```
 
 ```@example
 # @highlight-auto-start
@@ -253,7 +350,20 @@ end # @highlight-auto-end
 calculate(5, 3)
 ```
 
-**Example**:
+**Working Example**:
+
+```julia
+# @highlight-auto-start,bgcolor=lightpink
+function calculate(x, y)
+    # @highlight-auto-start,bgcolor=#ffeecc
+    result = x + y
+    println("Result: $result")
+    # @highlight-auto-end
+    return result
+end # @highlight-auto-end
+
+calculate(5, 3)
+```
 
 ```@example
 # @highlight-auto-start,bgcolor=lightpink
@@ -302,7 +412,16 @@ end
 - Add `# [!code highlight:N]` to highlight N consecutive lines starting from that line
 - Compatible with standard Shiki notation
 
-**Example**:
+**Working Example**:
+
+```julia
+function example()
+    x = 1
+    y = 2  # [!code highlight]
+    z = 3
+    return x + y + z
+end
+```
 
 ```@example
 function example()
@@ -326,7 +445,14 @@ julia> mean(x)
 3.0
 ```
 
-**Example**:
+**Working Example**:
+
+```julia
+# @highlight: 2-3
+x = [1, 2, 3, 4, 5]
+sum(x)
+mean(x)
+```
 
 ```@repl
 # @highlight: 2-3
