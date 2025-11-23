@@ -108,7 +108,7 @@ Shiki syntax highlighting is applied to the following types of code blocks:
 
 #### Standard Markdown Code Blocks
 
-Any code block with a language specifier:
+Any code block with a [language specifier](https://shiki.style/languages):
 
 ````markdown
 ```julia
@@ -121,6 +121,7 @@ Any code block with a language specifier:
 - **`@setup`** - Code is hidden, so no highlighting is displayed
 - **`@eval`** - Code is hidden, only results are shown
 - **`@docs`**, **`@autodocs`**, etc. - These are not code blocks
+- **`nohighlight`** - Code blocks marked as `nohighlight` are intentionally excluded from Shiki processing and rendered as plain text. Highlight markers (such as `# @highlight:`, `[!code highlight]`, etc.) will not be processed in these blocks.
 
 ### Supported Languages
 

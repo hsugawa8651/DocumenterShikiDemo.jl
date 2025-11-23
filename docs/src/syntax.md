@@ -26,16 +26,6 @@ end
 
 **Working Example**:
 
-```nohighlight
-# @highlight: 2,4-5
-function example()
-    x = 1  # This line will be highlighted
-    y = 2
-    z = x + y  # These lines will be highlighted
-    return z   # These lines will be highlighted
-end
-```
-
 ```@example
 # @highlight: 2,4-5
 function example()
@@ -60,10 +50,11 @@ When `@highlight-end` is placed on its own line, that line is removed from the o
 function example()
     println("Normal line")
     # @highlight-start
-    x = important_calculation()
-    y = another_important_step()
+    x = 10 * 2
+    y = x + 5
     # @highlight-end
     println("Normal line")
+    return y
 end
 ```
 
@@ -73,18 +64,6 @@ In this pattern:
 - The `# @highlight-end` line itself is removed from the output
 
 **Working Example**:
-
-```nohighlight
-function example()
-    println("Normal line")
-    # @highlight-start
-    x = 10 * 2
-    y = x + 5
-    # @highlight-end
-    println("Normal line")
-    return y
-end
-```
 
 ```@example
 function example()
@@ -106,9 +85,10 @@ You can place `@highlight-end` on the same line as the last line you want to hig
 function example()
     println("Normal line")
     # @highlight-start
-    x = important_calculation()
-    y = another_important_step()  # @highlight-end
+    x = 10 * 2
+    y = x + 5  # @highlight-end
     println("Normal line")
+    return y
 end
 ```
 
@@ -118,17 +98,6 @@ In this pattern:
 - Only the `# @highlight-end` marker is removed, the code on that line remains
 
 **Working Example**:
-
-```nohighlight
-function example()
-    println("Normal line")
-    # @highlight-start
-    x = 10 * 2
-    y = x + 5  # @highlight-end
-    println("Normal line")
-    return y
-end
-```
 
 ```@example
 function example()
@@ -154,14 +123,16 @@ Use different highlight levels (1-4) to visualize nested code structures with di
 # @highlight-start[1]
 function demo()
     # @highlight-start[2]
-    for i in 1:10
+    for i in 1:3
         # @highlight-start[3]
         if i % 2 == 0
             # @highlight-start[4]
-            println(i) # @highlight-end
+            println("Even: $i") # @highlight-end
         end # @highlight-end
     end # @highlight-end
 end # @highlight-end
+
+demo()
 ```
 
 **Line Range**: Same as Block Syntax - highlighting starts from **the line after** the marker and ends at **the line before** the closing marker. All marker comments are removed from the output.
@@ -178,22 +149,6 @@ end # @highlight-end
 - Useful for complex algorithms with multiple nesting levels
 
 **Working Example**:
-
-```nohighlight
-# @highlight-start[1]
-function demo()
-    # @highlight-start[2]
-    for i in 1:3
-        # @highlight-start[3]
-        if i % 2 == 0
-            # @highlight-start[4]
-            println("Even: $i") # @highlight-end
-        end # @highlight-end
-    end # @highlight-end
-end # @highlight-end
-
-demo()
-```
 
 ```@example
 # @highlight-start[1]
@@ -219,16 +174,17 @@ Use `@highlight-auto-start` and `@highlight-auto-end` to automatically determine
 # @highlight-auto-start
 function demo()
     # @highlight-auto-start
-    for i in 1:10
+    for i in 1:3
         # @highlight-auto-start
         if i % 2 == 0
             # @highlight-auto-start
-            println(i)
+            println("Even: $i")
             # @highlight-auto-end
-        # @highlight-auto-end
-    # @highlight-auto-end
-# @highlight-auto-end
-end
+        end # @highlight-auto-end
+    end # @highlight-auto-end
+end # @highlight-auto-end
+
+demo()
 ```
 
 **Line Range**: Same as Block Syntax - highlighting starts from **the line after** the marker and ends at **the line before** the closing marker. All marker comments are removed from the output.
@@ -247,23 +203,6 @@ end
 - Useful when you want automatic color coding based on nesting structure
 
 **Working Example**:
-
-```nohighlight
-# @highlight-auto-start
-function demo()
-    # @highlight-auto-start
-    for i in 1:3
-        # @highlight-auto-start
-        if i % 2 == 0
-            # @highlight-auto-start
-            println("Even: $i")
-            # @highlight-auto-end
-        end # @highlight-auto-end
-    end # @highlight-auto-end
-end # @highlight-auto-end
-
-demo()
-```
 
 ```@example
 # @highlight-auto-start
@@ -349,19 +288,6 @@ calculate(5, 3)
 
 **Working Example**:
 
-```nohighlight
-# @highlight-auto-start,bgcolor=lightpink
-function calculate(x, y)
-    # @highlight-auto-start,bgcolor=#ffeecc
-    result = x + y
-    println("Result: $result")
-    # @highlight-auto-end
-    return result
-end # @highlight-auto-end
-
-calculate(5, 3)
-```
-
 ```@example
 # @highlight-auto-start,bgcolor=lightpink
 function calculate(x, y)
@@ -409,56 +335,52 @@ end
 - Add `# [!code highlight:N]` to highlight N consecutive lines starting from that line
 - Compatible with standard Shiki notation
 
-**Working Example**:
+**Note**: The `[!code highlight]` syntax does not support custom `bgcolor=` specification. For custom background colors, use the `@highlight-auto-start,bgcolor=...` syntax instead (see Section 4).
 
-```nohighlight
-function example()
-    x = 1
-    y = 2  # [!code highlight]
-    z = 3
-    return x + y + z
-end
-```
+**Working Example**:
 
 ```@example
 function example()
-    x = 1
-    y = 2  # [!code highlight]
+    x = 1  # [!code highlight:3]
+    y = 2
     z = 3
     return x + y + z
 end
 ```
 
-## 6. REPL Block Highlighting
+## 6. REPL-Style Code Highlighting
 
-Highlighting also works with `@repl` blocks that show Julia REPL prompts:
+For REPL-style code examples, use the inline comment syntax `[!code highlight]`:
 
 ```nohighlight
-# @highlight: 2-3
-julia> x = [1, 2, 3, 4, 5]
-julia> sum(x)
+julia> x = [1, 2, 3, 4, 5]  # [!code highlight]
+5-element Vector{Int64}:
+ 1
+ 2
+ 3
+ 4
+ 5
+
+julia> sum(x)  # [!code highlight]
 15
-julia> mean(x)
-3.0
 ```
 
 **Working Example**:
 
-```nohighlight
-# @highlight: 2-3
-x = [1, 2, 3, 4, 5]
-sum(x)
-mean(x)
+```julia
+julia> x = [1, 2, 3, 4, 5]  # [!code highlight]
+5-element Vector{Int64}:
+ 1
+ 2
+ 3
+ 4
+ 5
+
+julia> sum(x)  # [!code highlight]
+15
 ```
 
-```@repl
-# @highlight: 2-3
-x = [1, 2, 3, 4, 5]
-sum(x)
-mean(x)
-```
-
-All highlight syntaxes work with REPL blocks, including block markers and auto-leveling.
+This approach works well for static REPL examples where you want to highlight specific commands.
 
 ## When to Use Each Syntax
 

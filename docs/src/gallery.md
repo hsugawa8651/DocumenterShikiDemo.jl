@@ -124,7 +124,6 @@ function process_data(data)
         error("Data cannot be empty")
     end
     # @highlight-end
-
     # Process data
     result = map(x -> x * 2, data)
     println("Processing complete!")
@@ -156,8 +155,7 @@ function matrix_multiply(A, B)
     # Check dimensions
     if n != n2
         error("Incompatible dimensions")
-    end
-    # @highlight-end
+    end  # @highlight-end
 
     C = zeros(m, p)
     # @highlight-start[3]
