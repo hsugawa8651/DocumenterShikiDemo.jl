@@ -4,44 +4,43 @@ This page showcases practical examples of DocumenterShiki's syntax highlighting 
 
 ## Shiki vs Highlight.js Quality Comparison
 
-DocumenterShiki uses Shiki for syntax highlighting, which provides VS Code-quality highlighting with TextMate grammars. Here's an example that demonstrates the superior quality compared to traditional highlight.js:
+DocumenterShiki uses Shiki for syntax highlighting, which provides VS Code-quality highlighting with TextMate grammars.
 
-```julia
-# String handling with escape sequences
-message = "Hello, \"World\"!\nThis is a multi-line\tstring with \\escapes"
+### Before: highlight.js (Documenter.jl default)
 
-# Complex function calls and operators
-function process_data(items::Vector{Float64}, threshold=0.5)
-    # Filter and transform with operators
-    filtered = filter(x -> x > threshold, items)
-    result = map(x -> x * 2.0 + 1.5, filtered)
+![highlight.js syntax highlighting](assets/highlight-js-screenshot.png)
 
-    # String interpolation and formatting
-    println("Processed $(length(result)) items: $result")
+*Traditional highlight.js highlighting - basic color coding with limited grammar recognition*
 
-    return sum(result) / length(result)
+### After: Shiki (DocumenterShiki)
+
+![Shiki syntax highlighting](assets/testcodeshikistyle-main-shiki.png)
+
+*Shiki highlighting - VS Code-quality with TextMate grammars*
+
+The same code example shown above:
+
+```nohighlight
+function main(who::String)
+    @show who
+    who *= "-san"
+    print(stdout, "hello, $(who)!\n")
+    return nothing
 end
 
-# Method calls and type annotations
-data = [1.2, 3.4, 0.8, 2.1, 0.3]
-average = process_data(data, 1.0)
-
-# Dictionary with symbols and strings
-config = Dict(
-    :name => "MyApp",
-    :version => v"1.0.0",
-    :enabled => true,
-    :threshold => 0.75
-)
+function main()
+    main("world")
+end
 ```
 
-**What makes Shiki better:**
-- **String literals**: Quote marks and content are properly distinguished, escape sequences highlighted
-- **Operators**: Individual operators (`->`, `+`, `*`, `/`, `=>`) are recognized and highlighted
-- **Function calls**: Functions like `filter`, `map`, `sum` are highlighted differently from keywords
-- **Type annotations**: `::Vector{Float64}` gets proper syntax highlighting for types
-- **String interpolation**: `$(...)` and `$variable` within strings are recognized
-- **Symbols and literals**: `:name`, `v"1.0.0"`, `true` are all properly categorized
+### What makes Shiki better:
+
+- **Operators**: Individual operators like `*=` and `::` are recognized and highlighted
+- **Function calls**: Functions like `print` are highlighted differently from keywords
+- **Type annotations**: `::String` gets proper syntax highlighting for types
+- **Function and variable names**: Function names like `main` and variables like `who` are properly distinguished
+- **String literals**: Quote marks and content are properly distinguished, escape sequences (`\n`) highlighted
+- **String interpolation**: `$(who)` within strings are recognized
 
 ## Basic Examples
 
