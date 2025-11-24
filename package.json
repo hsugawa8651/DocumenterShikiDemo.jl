@@ -1,5 +1,5 @@
 {
-  "name": "documenter-shiki",
+  "name": "DocumenterShikiDemo-docs",
   "version": "1.0.0",
   "type": "module",
   "private": true,
@@ -7,7 +7,6 @@
     "shiki": "^1.22.2"
   },
   "scripts": {
-    "build-shiki": "node build-shiki.js",
     "build-docs": "julia --project=docs docs/make.jl"
   }
 }
