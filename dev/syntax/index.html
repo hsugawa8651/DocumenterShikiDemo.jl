@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Syntax Highlighting · DocumenterShikiDemo</title><meta name="title" content="Syntax Highlighting · DocumenterShikiDemo"/><meta property="og:title" content="Syntax Highlighting · DocumenterShikiDemo"/><meta property="twitter:title" content="Syntax Highlighting · DocumenterShikiDemo"/><meta name="description" content="Documentation for DocumenterShikiDemo."/><meta property="og:description" content="Documentation for DocumenterShikiDemo."/><meta property="twitter:description" content="Documentation for DocumenterShikiDemo."/><meta property="og:url" content="https://hsugawa8651.github.io/DocumenterShikiDemo.jl/syntax/"/><meta property="twitter:url" content="https://hsugawa8651.github.io/DocumenterShikiDemo.jl/syntax/"/><link rel="canonical" href="https://hsugawa8651.github.io/DocumenterShikiDemo.jl/syntax/"/><script data-outdated-warner src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../search_index.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script><link href="../shiki-plugin.css" rel="stylesheet" type="text/css"/><script src="../shiki-plugin.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../">DocumenterShikiDemo</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../">Home</a></li><li class="is-active"><a class="tocitem" href>Syntax Highlighting</a><ul class="internal"><li><a class="tocitem" href="#1.-Line-Range-Syntax"><span>1. Line Range Syntax</span></a></li><li><a class="tocitem" href="#2.-Block-Syntax"><span>2. Block Syntax</span></a></li><li><a class="tocitem" href="#3.-Leveled-Highlights"><span>3. Leveled Highlights</span></a></li><li><a class="tocitem" href="#4.-Auto-Leveled-Highlights"><span>4. Auto-Leveled Highlights</span></a></li><li><a class="tocitem" href="#5.-Inline-Comment-Syntax"><span>5. Inline Comment Syntax</span></a></li><li><a class="tocitem" href="#6.-REPL-Style-Code-Highlighting"><span>6. REPL-Style Code Highlighting</span></a></li><li><a class="tocitem" href="#When-to-Use-Each-Syntax"><span>When to Use Each Syntax</span></a></li></ul></li><li><a class="tocitem" href="../gallery/">Gallery</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Syntax Highlighting</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Syntax Highlighting</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/hsugawa8651/DocumenterShikiDemo.jl" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/hsugawa8651/DocumenterShikiDemo.jl/blob/86e193c0d39fcc889e490225e94c543cf1e802d0/docs/src/syntax.md" title="View source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="Syntax-Highlighting-Features"><a class="docs-heading-anchor" href="#Syntax-Highlighting-Features">Syntax Highlighting Features</a><a id="Syntax-Highlighting-Features-1"></a><a class="docs-heading-anchor-permalink" href="#Syntax-Highlighting-Features" title="Permalink"></a></h1><p>DocumenterShiki adds special syntax for highlighting specific lines in code blocks.</p><h2 id="1.-Line-Range-Syntax"><a class="docs-heading-anchor" href="#1.-Line-Range-Syntax">1. Line Range Syntax</a><a id="1.-Line-Range-Syntax-1"></a><a class="docs-heading-anchor-permalink" href="#1.-Line-Range-Syntax" title="Permalink"></a></h2><p>Highlight specific lines using <code>@highlight:</code> comment at the beginning of the code block:</p><pre><code class="language-nohighlight hljs"># @highlight: 2,4-5
+function example()
+    x = 1  # This line will be highlighted
+    y = 2
+    z = x + y  # These lines will be highlighted
+    return z   # These lines will be highlighted
+end</code></pre><p><strong>Line Numbers</strong>: Line counting starts from <strong>line 1</strong> (the first line after the <code>@highlight:</code> comment). The <code>@highlight:</code> comment itself is not counted and will be removed from the output.</p><p><strong>Usage</strong>:</p><ul><li><code>@highlight: 2</code> - Highlight line 2</li><li><code>@highlight: 1,3</code> - Highlight lines 1 and 3</li><li><code>@highlight: 2-5</code> - Highlight lines 2 through 5</li><li><code>@highlight: 1,3-4,7</code> - Combine multiple ranges</li></ul><p><strong>Working Example</strong>:</p><pre><code class="language-julia hljs"><span class="hljs-comment"># @highlight: 2,4-5</span>
+<span class="hljs-keyword">function</span> example()
+    x = <span class="hljs-number">1</span>  <span class="hljs-comment"># This line will be highlighted</span>
+    y = <span class="hljs-number">2</span>
+    z = x + y  <span class="hljs-comment"># These lines will be highlighted</span>
+    <span class="hljs-keyword">return</span> z   <span class="hljs-comment"># These lines will be highlighted</span>
+<span class="hljs-keyword">end</span>
+</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">example (generic function with 1 method)</code></pre><h2 id="2.-Block-Syntax"><a class="docs-heading-anchor" href="#2.-Block-Syntax">2. Block Syntax</a><a id="2.-Block-Syntax-1"></a><a class="docs-heading-anchor-permalink" href="#2.-Block-Syntax" title="Permalink"></a></h2><p>Highlight multiple consecutive lines using <code>@highlight-start</code> and <code>@highlight-end</code>.</p><p><strong>Line Range</strong>: Highlighting starts from <strong>the line after</strong> <code>@highlight-start</code> and ends at <strong>the line before</strong> <code>@highlight-end</code>. The marker comments themselves are removed from the output.</p><h3 id="Standalone-@highlight-end-(Separate-Line)"><a class="docs-heading-anchor" href="#Standalone-@highlight-end-(Separate-Line)">Standalone <code>@highlight-end</code> (Separate Line)</a><a id="Standalone-@highlight-end-(Separate-Line)-1"></a><a class="docs-heading-anchor-permalink" href="#Standalone-@highlight-end-(Separate-Line)" title="Permalink"></a></h3><p>When <code>@highlight-end</code> is placed on its own line, that line is removed from the output and the highlighting ends at the line before it:</p><pre><code class="language-nohighlight hljs">function example()
+    println(&quot;Normal line&quot;)
+    # @highlight-start
+    x = 10 * 2
+    y = x + 5
+    # @highlight-end
+    println(&quot;Normal line&quot;)
+    return y
+end</code></pre><p>In this pattern:</p><ul><li>Highlighting starts after <code># @highlight-start</code> (from the <code>x = ...</code> line)</li><li>Highlighting ends before <code># @highlight-end</code> (the <code>y = ...</code> line is the last highlighted line)</li><li>The <code># @highlight-end</code> line itself is removed from the output</li></ul><p><strong>Working Example</strong>:</p><pre><code class="language-julia hljs"><span class="hljs-keyword">function</span> example()
+    println(<span class="hljs-string">&quot;Normal line&quot;</span>)
+    <span class="hljs-comment"># @highlight-start</span>
+    x = <span class="hljs-number">10</span> * <span class="hljs-number">2</span>
+    y = x + <span class="hljs-number">5</span>
+    <span class="hljs-comment"># @highlight-end</span>
+    println(<span class="hljs-string">&quot;Normal line&quot;</span>)
+    <span class="hljs-keyword">return</span> y
+<span class="hljs-keyword">end</span>
+</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">example (generic function with 1 method)</code></pre><h3 id="Inline-@highlight-end-(Same-Line-as-Code)"><a class="docs-heading-anchor" href="#Inline-@highlight-end-(Same-Line-as-Code)">Inline <code>@highlight-end</code> (Same Line as Code)</a><a id="Inline-@highlight-end-(Same-Line-as-Code)-1"></a><a class="docs-heading-anchor-permalink" href="#Inline-@highlight-end-(Same-Line-as-Code)" title="Permalink"></a></h3><p>You can place <code>@highlight-end</code> on the same line as the last line you want to highlight. In this case, that line is highlighted and the marker is simply removed:</p><pre><code class="language-nohighlight hljs">function example()
+    println(&quot;Normal line&quot;)
+    # @highlight-start
+    x = 10 * 2
+    y = x + 5  # @highlight-end
+    println(&quot;Normal line&quot;)
+    return y
+end</code></pre><p>In this pattern:</p><ul><li>Highlighting starts after <code># @highlight-start</code> (from the <code>x = ...</code> line)</li><li>Highlighting includes the line with <code># @highlight-end</code> (the <code>y = ...</code> line is highlighted)</li><li>Only the <code># @highlight-end</code> marker is removed, the code on that line remains</li></ul><p><strong>Working Example</strong>:</p><pre><code class="language-julia hljs"><span class="hljs-keyword">function</span> example()
+    println(<span class="hljs-string">&quot;Normal line&quot;</span>)
+    <span class="hljs-comment"># @highlight-start</span>
+    x = <span class="hljs-number">10</span> * <span class="hljs-number">2</span>
+    y = x + <span class="hljs-number">5</span>  <span class="hljs-comment"># @highlight-end</span>
+    println(<span class="hljs-string">&quot;Normal line&quot;</span>)
+    <span class="hljs-keyword">return</span> y
+<span class="hljs-keyword">end</span>
+</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">example (generic function with 1 method)</code></pre><p><strong>Usage</strong>:</p><ul><li>Use standalone <code>@highlight-end</code> when you want a clear visual separation in your source</li><li>Use inline <code>@highlight-end</code> to include the last line in highlighting without an extra marker line</li><li>Both patterns are useful for highlighting logical blocks like error checking or initialization</li></ul><h2 id="3.-Leveled-Highlights"><a class="docs-heading-anchor" href="#3.-Leveled-Highlights">3. Leveled Highlights</a><a id="3.-Leveled-Highlights-1"></a><a class="docs-heading-anchor-permalink" href="#3.-Leveled-Highlights" title="Permalink"></a></h2><p>Use different highlight levels (1-4) to visualize nested code structures with different colors:</p><pre><code class="language-nohighlight hljs"># @highlight-start[1]
+function demo()
+    # @highlight-start[2]
+    for i in 1:3
+        # @highlight-start[3]
+        if i % 2 == 0
+            # @highlight-start[4]
+            println(&quot;Even: $i&quot;) # @highlight-end
+        end # @highlight-end
+    end # @highlight-end
+end # @highlight-end
+
+demo()</code></pre><p><strong>Line Range</strong>: Same as Block Syntax - highlighting starts from <strong>the line after</strong> the marker and ends at <strong>the line before</strong> the closing marker. All marker comments are removed from the output.</p><p><strong>Colors</strong>:</p><ul><li>Level 1: Yellow</li><li>Level 2: Red</li><li>Level 3: Green</li><li>Level 4: Blue</li></ul><p><strong>Usage</strong>:</p><ul><li><code>@highlight-start[1]</code> - Start level 1 highlight</li><li>Nest multiple levels to show code hierarchy</li><li>Useful for complex algorithms with multiple nesting levels</li></ul><p><strong>Working Example</strong>:</p><pre><code class="language-julia hljs"><span class="hljs-comment"># @highlight-start[1]</span>
+<span class="hljs-keyword">function</span> demo()
+    <span class="hljs-comment"># @highlight-start[2]</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:<span class="hljs-number">3</span>
+        <span class="hljs-comment"># @highlight-start[3]</span>
+        <span class="hljs-keyword">if</span> i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>
+            <span class="hljs-comment"># @highlight-start[4]</span>
+            println(<span class="hljs-string">&quot;Even: <span class="hljs-variable">$i</span>&quot;</span>) <span class="hljs-comment"># @highlight-end</span>
+        <span class="hljs-keyword">end</span> <span class="hljs-comment"># @highlight-end</span>
+    <span class="hljs-keyword">end</span> <span class="hljs-comment"># @highlight-end</span>
+<span class="hljs-keyword">end</span> <span class="hljs-comment"># @highlight-end</span>
+
+demo()
+</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">Even: 2</code></pre><h2 id="4.-Auto-Leveled-Highlights"><a class="docs-heading-anchor" href="#4.-Auto-Leveled-Highlights">4. Auto-Leveled Highlights</a><a id="4.-Auto-Leveled-Highlights-1"></a><a class="docs-heading-anchor-permalink" href="#4.-Auto-Leveled-Highlights" title="Permalink"></a></h2><p>Use <code>@highlight-auto-start</code> and <code>@highlight-auto-end</code> to automatically determine highlight levels based on nesting depth:</p><pre><code class="language-nohighlight hljs"># @highlight-auto-start
+function demo()
+    # @highlight-auto-start
+    for i in 1:3
+        # @highlight-auto-start
+        if i % 2 == 0
+            # @highlight-auto-start
+            println(&quot;Even: $i&quot;)
+            # @highlight-auto-end
+        end # @highlight-auto-end
+    end # @highlight-auto-end
+end # @highlight-auto-end
+
+demo()</code></pre><p><strong>Line Range</strong>: Same as Block Syntax - highlighting starts from <strong>the line after</strong> the marker and ends at <strong>the line before</strong> the closing marker. All marker comments are removed from the output.</p><p><strong>Automatic Level Assignment</strong>:</p><ul><li>First nested level: Level 1 (Yellow)</li><li>Second nested level: Level 2 (Red)</li><li>Third nested level: Level 3 (Green)</li><li>Fourth nested level: Level 4 (Blue)</li><li>Fifth nested level and beyond: Level continues to increase (5, 6, 7...), but colors cycle through 1-4</li></ul><p><strong>Usage</strong>:</p><ul><li><code>@highlight-auto-start</code> - Start automatic highlight (level determined by depth)</li><li><code>@highlight-auto-end</code> - End automatic highlight</li><li>No need to manually specify level numbers</li><li>Useful when you want automatic color coding based on nesting structure</li></ul><p><strong>Working Example</strong>:</p><pre><code class="language-julia hljs"><span class="hljs-comment"># @highlight-auto-start</span>
+<span class="hljs-keyword">function</span> demo()
+    <span class="hljs-comment"># @highlight-auto-start</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:<span class="hljs-number">3</span>
+        <span class="hljs-comment"># @highlight-auto-start</span>
+        <span class="hljs-keyword">if</span> i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>
+            <span class="hljs-comment"># @highlight-auto-start</span>
+            println(<span class="hljs-string">&quot;Even: <span class="hljs-variable">$i</span>&quot;</span>)
+            <span class="hljs-comment"># @highlight-auto-end</span>
+        <span class="hljs-keyword">end</span> <span class="hljs-comment"># @highlight-auto-end</span>
+    <span class="hljs-keyword">end</span> <span class="hljs-comment"># @highlight-auto-end</span>
+<span class="hljs-keyword">end</span> <span class="hljs-comment"># @highlight-auto-end</span>
+
+demo()
+</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">Even: 2</code></pre><p><strong>Deep Nesting Example</strong> (5 levels - demonstrating color cycling):</p><pre><code class="language-nohighlight hljs"># @highlight-auto-start
+function process_data(data)
+    # @highlight-auto-start
+    for item in data
+        # @highlight-auto-start
+        if item &gt; 0
+            # @highlight-auto-start
+            while item &gt; 10
+                # @highlight-auto-start
+                item = item - 5
+                println(&quot;Reduced: $item&quot;)
+                # @highlight-auto-end
+            end # @highlight-auto-end
+            println(&quot;Final: $item&quot;)
+        end # @highlight-auto-end
+    end # @highlight-auto-end
+end # @highlight-auto-end
+
+process_data([15, 8, 22])</code></pre><pre><code class="language-julia hljs"><span class="hljs-comment"># @highlight-auto-start</span>
+<span class="hljs-keyword">function</span> process_data(data)
+    <span class="hljs-comment"># @highlight-auto-start</span>
+    <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> data
+        <span class="hljs-comment"># @highlight-auto-start</span>
+        <span class="hljs-keyword">if</span> item &gt; <span class="hljs-number">0</span>
+            <span class="hljs-comment"># @highlight-auto-start</span>
+            <span class="hljs-keyword">while</span> item &gt; <span class="hljs-number">10</span>
+                <span class="hljs-comment"># @highlight-auto-start</span>
+                item = item - <span class="hljs-number">5</span>
+                println(<span class="hljs-string">&quot;Reduced: <span class="hljs-variable">$item</span>&quot;</span>)
+                <span class="hljs-comment"># @highlight-auto-end</span>
+            <span class="hljs-keyword">end</span> <span class="hljs-comment"># @highlight-auto-end</span>
+            println(<span class="hljs-string">&quot;Final: <span class="hljs-variable">$item</span>&quot;</span>)
+        <span class="hljs-keyword">end</span> <span class="hljs-comment"># @highlight-auto-end</span>
+    <span class="hljs-keyword">end</span> <span class="hljs-comment"># @highlight-auto-end</span>
+<span class="hljs-keyword">end</span> <span class="hljs-comment"># @highlight-auto-end</span>
+
+process_data([<span class="hljs-number">15</span>, <span class="hljs-number">8</span>, <span class="hljs-number">22</span>])
+</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">Reduced: 10
+Final: 10
+Final: 8
+Reduced: 17
+Reduced: 12
+Reduced: 7
+Final: 7</code></pre><p>Note: Level 5 uses the same color as Level 1 (yellow), demonstrating color cycling while maintaining distinct level numbers.</p><h3 id="Custom-Background-Color"><a class="docs-heading-anchor" href="#Custom-Background-Color">Custom Background Color</a><a id="Custom-Background-Color-1"></a><a class="docs-heading-anchor-permalink" href="#Custom-Background-Color" title="Permalink"></a></h3><p>You can specify a custom background color using the <code>bgcolor</code> option:</p><pre><code class="language-nohighlight hljs"># @highlight-auto-start,bgcolor=lightpink
+function calculate(x, y)
+    # @highlight-auto-start,bgcolor=#ffeecc
+    result = x + y
+    println(&quot;Result: $result&quot;)
+    # @highlight-auto-end
+    return result
+end # @highlight-auto-end
+
+calculate(5, 3)</code></pre><p><strong>Working Example</strong>:</p><pre><code class="language-julia hljs"><span class="hljs-comment"># @highlight-auto-start,bgcolor=lightpink</span>
+<span class="hljs-keyword">function</span> calculate(x, y)
+    <span class="hljs-comment"># @highlight-auto-start,bgcolor=#ffeecc</span>
+    result = x + y
+    println(<span class="hljs-string">&quot;Result: <span class="hljs-variable">$result</span>&quot;</span>)
+    <span class="hljs-comment"># @highlight-auto-end</span>
+    <span class="hljs-keyword">return</span> result
+<span class="hljs-keyword">end</span> <span class="hljs-comment"># @highlight-auto-end</span>
+
+calculate(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>)
+</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">8</code></pre><p><strong>Color specification</strong>:</p><ul><li>Hex colors: <code>bgcolor=#ffcc00</code>, <code>bgcolor=#90ee90</code></li><li>Named colors: <code>bgcolor=lightblue</code>, <code>bgcolor=lightcoral</code>, <code>bgcolor=lightyellow</code></li></ul><p>This is useful for emphasizing specific code sections with distinctive colors.</p><h2 id="5.-Inline-Comment-Syntax"><a class="docs-heading-anchor" href="#5.-Inline-Comment-Syntax">5. Inline Comment Syntax</a><a id="5.-Inline-Comment-Syntax-1"></a><a class="docs-heading-anchor-permalink" href="#5.-Inline-Comment-Syntax" title="Permalink"></a></h2><p>Highlight specific lines using <code>[!code highlight]</code> in comments (compatible with Shiki transformers):</p><pre><code class="language-nohighlight hljs">function example()
+    x = 1
+    y = 2  # [!code highlight]
+    return x + y
+end</code></pre><p>For multiple consecutive lines:</p><pre><code class="language-nohighlight hljs">function example()
+    x = 1  # [!code highlight:3]
+    y = 2
+    z = 3
+    return x + y + z
+end</code></pre><p><strong>Usage</strong>:</p><ul><li>Add <code># [!code highlight]</code> at the end of the line to highlight</li><li>Add <code># [!code highlight:N]</code> to highlight N consecutive lines starting from that line</li><li>Compatible with standard Shiki notation</li></ul><p><strong>Note</strong>: The <code>[!code highlight]</code> syntax does not support custom <code>bgcolor=</code> specification. For custom background colors, use the <code>@highlight-auto-start,bgcolor=...</code> syntax instead (see Section 4).</p><p><strong>Working Example</strong>:</p><pre><code class="language-julia hljs"><span class="hljs-keyword">function</span> example()
+    x = <span class="hljs-number">1</span>  <span class="hljs-comment"># [!code highlight:3]</span>
+    y = <span class="hljs-number">2</span>
+    z = <span class="hljs-number">3</span>
+    <span class="hljs-keyword">return</span> x + y + z
+<span class="hljs-keyword">end</span>
+</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">example (generic function with 1 method)</code></pre><h2 id="6.-REPL-Style-Code-Highlighting"><a class="docs-heading-anchor" href="#6.-REPL-Style-Code-Highlighting">6. REPL-Style Code Highlighting</a><a id="6.-REPL-Style-Code-Highlighting-1"></a><a class="docs-heading-anchor-permalink" href="#6.-REPL-Style-Code-Highlighting" title="Permalink"></a></h2><p>For REPL-style code examples, use the inline comment syntax <code>[!code highlight]</code>:</p><pre><code class="language-nohighlight hljs">julia&gt; x = [1, 2, 3, 4, 5]  # [!code highlight]
+5-element Vector{Int64}:
+ 1
+ 2
+ 3
+ 4
+ 5
+
+julia&gt; sum(x)  # [!code highlight]
+15</code></pre><p><strong>Working Example</strong>:</p><pre><code class="language-julia hljs">julia&gt; x = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]  <span class="hljs-comment"># [!code highlight]</span>
+<span class="hljs-number">5</span>-element <span class="hljs-built_in">Vector</span>{<span class="hljs-built_in">Int64</span>}:
+ <span class="hljs-number">1</span>
+ <span class="hljs-number">2</span>
+ <span class="hljs-number">3</span>
+ <span class="hljs-number">4</span>
+ <span class="hljs-number">5</span>
+
+julia&gt; sum(x)  <span class="hljs-comment"># [!code highlight]</span>
+<span class="hljs-number">15</span>
+</code></pre><p>This approach works well for static REPL examples where you want to highlight specific commands.</p><h2 id="When-to-Use-Each-Syntax"><a class="docs-heading-anchor" href="#When-to-Use-Each-Syntax">When to Use Each Syntax</a><a id="When-to-Use-Each-Syntax-1"></a><a class="docs-heading-anchor-permalink" href="#When-to-Use-Each-Syntax" title="Permalink"></a></h2><ul><li><strong>Line Range Syntax</strong>: When you need to highlight specific, non-consecutive lines</li><li><strong>Block Syntax</strong>: For highlighting logical blocks (error checking, initialization, etc.)</li><li><strong>Leveled Highlights</strong>: For visualizing nested structures and code hierarchy with manual control</li><li><strong>Auto-Leveled Highlights</strong>: For automatic color coding based on nesting depth without manual level management</li><li><strong>Inline Comment Syntax</strong>: For quick, ad-hoc highlighting of individual lines</li></ul></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../gallery/">Gallery »</a><div class="flexbox-break"></div></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.16.1 on <span class="colophon-date" title="Wednesday 26 November 2025 07:12">Wednesday 26 November 2025</span>. Using Julia version 1.12.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
