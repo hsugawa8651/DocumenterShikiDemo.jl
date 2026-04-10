@@ -1,7 +1,7 @@
 name = "DocumenterShikiDemo"
 uuid = "bd28f9fa-8659-4fe0-a765-996c867546ea"
 authors = ["Hiroharu Sugawara <hsugawa@gmail.com> and contributors"]
-version = "0.1.0"
+version = "0.2.0"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
