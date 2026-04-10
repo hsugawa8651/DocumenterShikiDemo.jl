@@ -8,19 +8,19 @@ DocumenterShiki uses Shiki for syntax highlighting, which provides VS Code-quali
 
 ### Before: highlight.js (Documenter.jl default)
 
+Light mode:
+
 ![highlight.js syntax highlighting](assets/highlight-js-screenshot.png)
+
+Dark mode:
+
+![highlight.js syntax highlighting (dark)](assets/highlight-js-screenshot-dark.png)
 
 *Traditional highlight.js highlighting - basic color coding with limited grammar recognition*
 
 ### After: Shiki (DocumenterShiki)
 
-![Shiki syntax highlighting](assets/testcodeshikistyle-main-shiki.png)
-
-*Shiki highlighting - VS Code-quality with TextMate grammars*
-
-The same code example shown above:
-
-```nohighlight
+```julia
 function main(who::String)
     @show who
     who *= "-san"
@@ -32,6 +32,8 @@ function main()
     main("world")
 end
 ```
+
+*Shiki highlighting - VS Code-quality with TextMate grammars. Try switching to dark mode in Settings!*
 
 ### What makes Shiki better:
 
